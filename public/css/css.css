@@ -2,3 +2,40 @@
     background-color: #215A36;
     color: white;
 }
+.divConteudo{
+	background-color:#f2f2f2;
+	color: #666666;
+	border-radius: 6px;
+	border: 1px solid transparent;
+	width: 90%;
+	margin-right: 5%;
+    margin-left: 5%;
+	margin-top: 1px;
+	margin-bottom: 5px;
+	padding-right: 5%;
+	padding-left: 5%;
+	padding-top:20px;
+	padding-bottom:20px;
+	justify-content: center;
+}
+.table-cor{
+	background-color: #666666 !important;
+}
+.divPq{
+	width:100%;
+	max-width:300px;
+	margin-right:auto;
+	margin-left:auto;
+}
+.divMd{
+	width:100%;
+	max-width: 500px;
+	margin-right:auto;
+	margin-left:auto;
+}
+.divGr{
+	width:100%;
+	max-width:800px;
+	margin-right:auto;
+	margin-left:auto;
+}

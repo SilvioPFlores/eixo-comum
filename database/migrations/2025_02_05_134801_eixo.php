@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('eixo', function (Blueprint $table) {
+        Schema::create('eixos', function (Blueprint $table) {
             $table->increments('cd_eixo');
             $table->string('sg_eixo');
             $table->string('ds_eixo');
