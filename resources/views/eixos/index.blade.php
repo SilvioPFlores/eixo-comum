@@ -12,7 +12,6 @@ Eixos
         <a href=" {{ route('form-criar-eixo') }} " class="btn btn-primary btn-lg mb-2">Novo Eixo</a>
     </div>
     <hr>
-    <hr>
     <table class="table table-secondary table-hover ">
         <thead>
             <tr>
@@ -24,40 +23,19 @@ Eixos
         <tbody>
             @foreach ($eixos as $eixo)
                 @if ($eixo->status == 'IN')
-                <tr class="table-danger">
+                <tr class="trEixo table-danger" data-id="{{$eixo->id}}">
                 @else
-                <tr>
+                <tr class="trEixo" data-id="{{$eixo->id}}">
                 @endif
-                    <td class="text-center">{{$eixo->sg_eixo}}</td>
-                    <td>{{$eixo->ds_eixo}}</td>
+                    <td class="text-center">{{$eixo->sigla}}</td>
+                    <td>{{$eixo->nome}}</td>
                     <td class="text-center">{{$eixo->status}}</td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 @endsection
-<script>
-    $(document).ready(function () {
-        $('.trEixo').click(function () {
-            let id = $(this).closest('tr[data-id]').data('id');
-            const token = document.querySelector('input[name="_token"]').value;
-            let formData = new FormData();
-            formData.append('id', id);
-            formData.append('_token', token);
-            const url = `/eixos/${serieId}`;
-            fetch(url, {
-                body: formData,
-                method: 'GET'
-            })
-            /*$.post("eixo.php",
-                {
-                    formEditaEixo: "edita",
-                    cdEixo: id
-                },
-                function (data) {
-                    exibirConteudo(data);
-                });
-                */
-        });
-    });
-</script>
+
+@section('js')
+{{ asset('js/eixo-js.js')}}
+@endsection

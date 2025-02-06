@@ -18,8 +18,10 @@
 	padding-bottom:20px;
 	justify-content: center;
 }
-.table-cor{
-	background-color: #666666 !important;
+.inativo, .inativo:focus, .inativo:active{
+	background-color:#f8d7da;
+	color: #58151c;
+	border-color: #f1aeb5;
 }
 .divPq{
 	width:100%;

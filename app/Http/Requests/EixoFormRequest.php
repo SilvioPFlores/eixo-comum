@@ -14,16 +14,16 @@ class EixoFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'txtSigla' => 'required|min:2',
-            'txtEixo' => 'required|min:5'
+            'sigla' => 'required|min:2',
+            'nome' => 'required|min:5'
         ];
     }
     public function messages(): array
     {
         return [
             'required' => 'O campo :attribute é obrigatório',
-            'txtSigla.min' => 'O campo Sigla precisa ter ao menos 2 caracteres',
-            'txtEixo.min' => 'O campo Descrição precisa ter ao menos 5 caracteres'
+            'sigla.min' => 'O campo Sigla precisa ter ao menos 2 caracteres',
+            'nome.min' => 'O campo Descrição precisa ter ao menos 5 caracteres'
         ];
     }
 }

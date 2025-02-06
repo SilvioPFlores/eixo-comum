@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- LOCAL -->
     <link href="{{ asset('css/css.css')}}" rel="stylesheet">
-    <!--script src="js/app.js"></script-->
+    <!--link href="@yield('css')" rel="stylesheet"-->
     <title>@yield('titulo')</title>
 </head>
 <body>
@@ -28,3 +28,5 @@
     </div>
 </body>
 </html>
+<!--script src="{{ asset('js/js.js')}}"></script-->
+<script src="@yield('js')"></script>

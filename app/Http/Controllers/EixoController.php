@@ -12,7 +12,7 @@ class EixoController extends Controller
     public function index()
     {
         $eixos = Eixo::query()
-            ->orderBy('sg_eixo')
+            ->orderBy('sigla')
             ->get();
         return view('eixos.index', compact('eixos'));
     }
@@ -23,20 +23,26 @@ class EixoController extends Controller
     public function store (EixoFormRequest $request)
     {
         DB::beginTransaction();
-        $eixo = Eixo::create([
-            'sg_eixo' => $request->txtSigla,
-            'ds_eixo' => $request->txtEixo,
-            'status' => 'AT'
-        ]);
+        $eixo = Eixo::create($request->all());
         DB::commit();
         return redirect()->route('eixos')->with(
             'mensagem', 
-            "Eixo {$eixo->sg_eixo} - {$eixo->ds_eixo} criado com sucesso"
+            "Eixo {$eixo->sigla} - {$eixo->nome} criado com sucesso"
         );
     }
-    public function verEixo (Request $request)
+    public function verEixo (int $id)
     {
-        var_dump($request);
-        //return view('eixos.create');
+        $eixo = Eixo::find($id);
+        return view('eixos.ver', compact('eixo'));
+    }
+    public function update(int $id, EixoFormRequest $request) {
+        DB::beginTransaction();
+        $eixo = Eixo::find($id);
+        $eixo->update($request->all());
+        DB::commit();
+        return redirect()->route('eixos')->with(
+            'mensagem', 
+            "Eixo {$eixo->sigla} - {$eixo->nome} alterado com sucesso"
+        );
     }
 }

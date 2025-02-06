@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('eixos', function (Blueprint $table) {
-            $table->increments('cd_eixo');
-            $table->string('sg_eixo');
-            $table->string('ds_eixo');
+            $table->increments('id');
+            $table->string('sigla');
+            $table->string('nome');
             $table->string('status');
         });
     }
