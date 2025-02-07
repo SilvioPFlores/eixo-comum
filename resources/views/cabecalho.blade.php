@@ -1,7 +1,7 @@
 <div class="row corVerde pdCabecalho pt-3">
 	<div class="col-md-3">
 		<p class="text-center">
-			<img src="{{ asset('img/logo_unifesp_branco.png') }}">
+			<img src="{{ asset('img/logo_unifesp_branco.png') }}" style="width: 100%; max-width: 190px;">
 		</p>
 	</div>
 	<div class="col-md-6">
