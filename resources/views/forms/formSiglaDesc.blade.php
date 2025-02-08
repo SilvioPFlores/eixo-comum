@@ -1,6 +1,6 @@
 <input type="hidden" id="status" name="status" value="AT">
 <div class="form-floating mb-3">
-    <input type="text" class="form-control" name="sigla" id="sigla" placeholder="Sigla" required>
+    <input type="text" class="form-control" name="sigla" id="sigla" placeholder="Sigla" style="text-transform:uppercase" required>
     <label for="sigla">Sigla:</label>
 </div>
 <div class="form-floating mb-3">

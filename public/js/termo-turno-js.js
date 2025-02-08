@@ -18,7 +18,7 @@ $(document).ready(function () {
         const token = $('input[name="_token"]').first().val();        
         formData.append('status', status);
         formData.append('_token', token); 
-        const url = `/turnos/${id}`;
+        const url = `/${$('#nomePage').html().toLowerCase()}s/${id}`;
 
         fetch(url, {
             body: formData,

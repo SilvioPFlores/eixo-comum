@@ -22,7 +22,7 @@
     @include('cabecalho')
     @include('menu',['nivel' => 2])
     <div class="container">
-        <div class='divConteudo mb-3 mt-2'>
+        <div class='divConteudo mb-3'>
             @yield('conteudo')
         </div>
     </div>

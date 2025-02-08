@@ -14,7 +14,7 @@ class TurnoController extends Controller
         $turnos = Turno::query()
         ->orderBy('sigla')
         ->get();
-    return view('turnos.index', compact('turnos'));
+        return view('turnos.index', compact('turnos'));
     }
     public function create()
     {

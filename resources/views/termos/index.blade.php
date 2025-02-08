@@ -1,31 +1,31 @@
 @extends('layout')
 
 @section('titulo')
-Turnos
+Termos
 @endsection
 
 @section('conteudo')
     @includeWhen(session('mensagem'), 'mensagem', ['mensagem' => session('mensagem')])
-    <h1>Turnos</h1>
+    <h1>Termos</h1>
     <hr>
     <div class="text-center">
-        <a href=" {{ route('form-criar-turno') }} " class="btn btn-primary btn-lg mb-2">Novo Turno</a>
+        <a href=" {{ route('form-criar-termo') }} " class="btn btn-primary btn-lg mb-2">Novo Termo</a>
     </div>
     <hr>
     <div class="divMd">
         <table class="table table-secondary">
             <thead>
                 <tr>
-                    <th id="nomePage" scope="col">Turno</th>
-                    <th class="text-center" scope="col">Sigla</th>
+                    <th id="nomePage" scope="col">Termo</th>
+                    <th class="text-center" scope="col">Semestre</th>
                     <th class="text-center" scope="col" colspan="2">Status</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($turnos as $turno)
-                <tr class="trTurno{{$turno->status == 'IN' ? ' table-danger' : ''}}" id="tr-{{$turno->id}}">
-                    <td>{{$turno->nome}}</td>
-                    <td class="text-center">{{$turno->sigla}}</td>
+                @foreach ($termos as $termo)
+                <tr class="trTermo{{$termo->status == 'IN' ? ' table-danger' : ''}}" id="tr-{{$termo->id}}">
+                    <td>{{$termo->id}}</td>
+                    <td class="text-center">{{$termo->semestre}}</td>
                     <td class="text-center">
                         <form action="" method="POST">
                             @csrf
@@ -34,14 +34,14 @@ Turnos
                                     class="form-check-input chkStatus" 
                                     type="checkbox" 
                                     role="switch" 
-                                    id="chk-{{$turno->id}}"
-                                    data-id="{{$turno->id}}" 
-                                    value="{{$turno->status}}" 
-                                    {{$turno->status == 'AT' ? 'checked' : ''}}>
+                                    id="chk-{{$termo->id}}"
+                                    data-id="{{$termo->id}}" 
+                                    value="{{$termo->status}}" 
+                                    {{$termo->status == 'AT' ? 'checked' : ''}}>
                             </div>
                         </form>
                     </td>
-                    <td id="td-status-{{$turno->id}}">{{$turno->status}}</td>
+                    <td id="td-status-{{$termo->id}}">{{$termo->status}}</td>
                 </tr>
             @endforeach
             </tbody>
