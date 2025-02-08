@@ -42,7 +42,7 @@
                                 <li><a class="dropdown-item" href="uc.php">UC's</a></li>
                                 <li><a class="dropdown-item" href="termo.php">Termo</a></li>
                                 <li><a class="dropdown-item" href="curso.php">Curso</a></li>
-                                <li><a class="dropdown-item" href="turno.php">Turno</a></li>
+                                <li><a class="dropdown-item" href="{{route('turnos')}}">Turnos</a></li>
                                 <li><a class="dropdown-item" href="{{route('eixos')}}">Eixos</a></li>
                             </ul>
                         </li>

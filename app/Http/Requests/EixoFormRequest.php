@@ -14,7 +14,7 @@ class EixoFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'sigla' => 'required|min:2',
+            'sigla' => 'required|min:1',
             'nome' => 'required|min:5'
         ];
     }

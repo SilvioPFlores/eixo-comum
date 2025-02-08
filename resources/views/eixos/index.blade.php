@@ -22,11 +22,7 @@ Eixos
         </thead>
         <tbody>
             @foreach ($eixos as $eixo)
-                @if ($eixo->status == 'IN')
-                <tr class="trEixo table-danger" data-id="{{$eixo->id}}">
-                @else
-                <tr class="trEixo" data-id="{{$eixo->id}}">
-                @endif
+                <tr class="trEixo {{$eixo->status == 'IN' ? 'table-danger' : ''}}" data-id="{{$eixo->id}}">
                     <td class="text-center">{{$eixo->sigla}}</td>
                     <td>{{$eixo->nome}}</td>
                     <td class="text-center">{{$eixo->status}}</td>

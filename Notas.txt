@@ -1,0 +1,9 @@
+Iniciar um novo modulo
+php artisan make:model Turno -m			//criar o model junto com o migration
+php artisan make:controller TurnoController	//criar o controler
+criar o método index no controller que retorna uma view para o index.blade
+public function index() {
+    return view('turnos.index');  //sempre no plural
+}
+estabelecer a rota //routes/web e também modificar o menu
+criar o index.blade
