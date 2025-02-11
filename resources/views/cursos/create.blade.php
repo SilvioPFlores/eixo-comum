@@ -6,13 +6,14 @@ Curso
 
 @section('conteudo')
     @includeWhen($errors->any(), 'erros', ['errors' => $errors])
+    @include('modal/cursos')
     <div class="divMd">
         <fildset>
             <legend>Novo Curso</legend>
             <form class="row g-3" action="" method="POST">
                 @csrf
                 <div class="text-center">
-                    <a href="#" class="btn btn-primary mb-2">Curso <i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    <a href="#" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#modalCursos">Curso <i class="fa-solid fa-magnifying-glass-plus"></i></a>
                 </div>
                 <input type="hidden" id="status" name="status" value="AT">
                 <div class="col-md-4">
@@ -42,4 +43,8 @@ Curso
             </form>
         </fildset>
     </div>
+@endsection
+
+@section('js')
+{{ asset('js/curso-js.js')}}
 @endsection

@@ -26,3 +26,4 @@ Route::get('/cursos/criar', [CursoController::class, 'create'])->name('form-cria
 Route::post('/cursos/criar', [CursoController::class, 'store']);
 Route::get('/cursos/{id}', [CursoController::class, 'verCurso']);
 Route::patch('/cursos/{id}', [CursoController::class, 'update']);
+Route::post('/cursos/buscarCursos', [CursoController::class, 'buscarCursos']);
