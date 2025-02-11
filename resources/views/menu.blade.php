@@ -38,9 +38,9 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Opções
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="uc.php">UC's</a></li>
-                                <li><a class="dropdown-item" href="curso.php">Curso</a></li>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #eeeeee;">
+                                <li><a class="dropdown-item" href="#">UC's</a></li>
+                                <li><a class="dropdown-item" href="{{route('cursos')}}">Cursos</a></li>
                                 <li><a class="dropdown-item" href="{{route('termos')}}">Termos</a></li>
                                 <li><a class="dropdown-item" href="{{route('turnos')}}">Turnos</a></li>
                                 <li><a class="dropdown-item" href="{{route('eixos')}}">Eixos</a></li>

@@ -8,4 +8,9 @@ class Turno extends Model
 {
     public $timestamps = false;
     protected $fillable = ['sigla', 'nome', 'status'];
+
+    public function cursos ()
+    {
+        return $this->hasMany(Curso::class);
+    }
 }
