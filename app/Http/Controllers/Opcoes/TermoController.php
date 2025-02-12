@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Opcoes;
 
+use App\Http\Controllers\Controller;
 use App\Models\Termo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -12,11 +13,11 @@ class TermoController extends Controller
         $termos = Termo::query()
         ->orderBy('id')
         ->get();
-        return view('termos.index', compact('termos'));
+        return view('opcoes.termos.index', compact('termos'));
     }
     public function create()
     {
-        return view('termos.create');
+        return view('opcoes.termos.create');
     }
     public function store (Request $request)
     {

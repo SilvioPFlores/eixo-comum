@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\{CursoController, EixoComumController,EixoController, TermoController, TurnoController};
+use App\Http\Controllers\EixoComumController;
+use App\Http\Controllers\Opcoes\{EixoController,TurnoController,CursoController, TermoController, UcController};
 use Illuminate\Support\Facades\Route;
 
 Route::get('/eixo-comum', [EixoComumController::class, 'index'])->name('home');
@@ -27,3 +28,5 @@ Route::post('/cursos/criar', [CursoController::class, 'store']);
 Route::get('/cursos/{id}', [CursoController::class, 'verCurso']);
 Route::patch('/cursos/{id}', [CursoController::class, 'update']);
 Route::post('/cursos/buscarCursos', [CursoController::class, 'buscarCursos']);
+
+Route::get('/ucs', [UcController::class, 'index'])->name('ucs');

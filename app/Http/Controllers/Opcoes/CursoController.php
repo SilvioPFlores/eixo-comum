@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Opcoes;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\CursoFormRequest;
 use App\Models\{Curso, Turno};
 use Illuminate\Http\Request;
@@ -18,14 +19,14 @@ class CursoController extends Controller
             ->get();
 
         //var_dump($cursos);
-        return view('cursos.index', compact('cursos'));
+        return view('opcoes.cursos.index', compact('cursos'));
     }
     public function create()
     {
         $turnos = Turno::query()
             ->where('status', '=', 'AT')
             ->get();
-        return view('cursos.create', compact('turnos'));
+        return view('opcoes.cursos.create', compact('turnos'));
     }
     public function store(CursoFormRequest $request)
     {
@@ -43,7 +44,7 @@ class CursoController extends Controller
             ->where('status', '=', 'AT')
             ->get();
 
-        return view('cursos.ver', compact(['curso', 'turnos']));
+        return view('opcoes.cursos.ver', compact(['curso', 'turnos']));
     }
     public function update(int $id, Request $request) {
         DB::beginTransaction();

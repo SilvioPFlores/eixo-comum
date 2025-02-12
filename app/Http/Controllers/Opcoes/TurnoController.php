@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Opcoes;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\EixoFormRequest;
 use App\Models\Turno;
 use Illuminate\Http\Request;
@@ -14,11 +15,11 @@ class TurnoController extends Controller
         $turnos = Turno::query()
         ->orderBy('sigla')
         ->get();
-        return view('turnos.index', compact('turnos'));
+        return view('opcoes.turnos.index', compact('turnos'));
     }
     public function create()
     {
-        return view('turnos.create');
+        return view('opcoes.turnos.create');
     }
     public function store (EixoFormRequest $request)
     {

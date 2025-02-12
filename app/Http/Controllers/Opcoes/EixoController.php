@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Opcoes;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\EixoFormRequest;
 use App\Models\Eixo;
 use Illuminate\Http\Request;
@@ -14,11 +15,11 @@ class EixoController extends Controller
         $eixos = Eixo::query()
             ->orderBy('sigla')
             ->get();
-        return view('eixos.index', compact('eixos'));
+        return view('opcoes.eixos.index', compact('eixos'));
     }
     public function create()
     {
-        return view('eixos.create');
+        return view('opcoes.eixos.create');
     }
     public function store (EixoFormRequest $request)
     {
@@ -33,7 +34,7 @@ class EixoController extends Controller
     public function verEixo (int $id)
     {
         $eixo = Eixo::find($id);
-        return view('eixos.ver', compact('eixo'));
+        return view('opcoes.eixos.ver', compact('eixo'));
     }
     public function update(int $id, EixoFormRequest $request) {
         DB::beginTransaction();
