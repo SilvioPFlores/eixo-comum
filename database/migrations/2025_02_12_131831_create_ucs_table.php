@@ -12,8 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ucs', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('id');
+            $table->string('codigo');
+            $table->string('nome');
+            $table->integer('eixo_id');
+            $table->foreign('eixo_id')
+                ->references('id')
+                ->on('eixos');
+            $table->integer('termo_id');
+            $table->foreign('termo_id')
+                ->references('id')
+                ->on('termos');
+            $table->integer('uc_principal');
+            $table->string('status');
         });
     }
 

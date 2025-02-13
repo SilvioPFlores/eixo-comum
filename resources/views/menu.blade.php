@@ -39,7 +39,7 @@
                                 Opções
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #eeeeee;">
-                                <li><a class="dropdown-item" href="#">UC's</a></li>
+                                <li><a class="dropdown-item" href="{{route('ucs')}}">UC's</a></li>
                                 <li><a class="dropdown-item" href="{{route('cursos')}}">Cursos</a></li>
                                 <li><a class="dropdown-item" href="{{route('termos')}}">Termos</a></li>
                                 <li><a class="dropdown-item" href="{{route('turnos')}}">Turnos</a></li>

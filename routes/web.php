@@ -30,3 +30,5 @@ Route::patch('/cursos/{id}', [CursoController::class, 'update']);
 Route::post('/cursos/buscarCursos', [CursoController::class, 'buscarCursos']);
 
 Route::get('/ucs', [UcController::class, 'index'])->name('ucs');
+Route::get('/ucs/criar', [UcController::class, 'create'])->name('form-criar-uc');
+Route::post('/ucs/burcarTermo', [UcController::class, 'burcarTermo']);
